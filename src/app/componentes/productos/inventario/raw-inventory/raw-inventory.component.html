@@ -1,0 +1,90 @@
+<div class="d-flex" *ngIf="isLogged">
+    <div id="sidebar-container" class="bg-primario">
+        <div class="logo">
+            <h4 class="text-light font-weight-bold">
+                Diseños y Rolados S.A
+            </h4>
+        </div>
+        <div class="menu">
+            <a href="/user/new/insert" class="d-block text-light p-3">
+                <i class="fas fa-plus-square mr-2 lead"></i> Materia Prima
+            </a>
+            <a href="/user/new/intermediate" class="d-block text-light p-3">
+                <i class="fas fa-plus-square mr-2 lead"></i> Materia Intermedia
+            </a>
+            <a href="/user/new/final" class="d-block text-light p-3">
+                <i class="fas fa-plus-square mr-2 lead"></i> Materia Final
+            </a>
+            <a class="nav-link dropdown-toggle d-block text-light p-3 bg-primario font-weight-bold" href="user/inventory" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-indent mr-2"></i> Inventario
+            </a>
+            <div class="dropdown-menu bg-primario" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item text-light font-weight-bold" href="user/inventory/raw_inventory">Materia Prima</a>
+                <a class="dropdown-item text-light font-weight-bold" href="user/inventory/intermediate_inventory">Materia
+                Intermedia</a>
+                <a class="dropdown-item text-light font-weight-bold" href="user/inventory/final_inventory">Materia
+                Final</a>
+            </div>
+        </div>
+    </div>
+    <div class="w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-silvere">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto ">
+                    <button class="btn" (click)="onClickLogout()">
+            <i class="fas fa-user-cog"></i> Cerrar Sesion
+          </button>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="card" style="display: block;">
+                <div class="card-header">
+                    <h1 class="font-weight-bold">Invetario</h1>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th class="sticky">No.</th>
+                                <th class="sticky">Proveedor</th>
+                                <th class="sticky">Peso</th>
+                                <th class="sticky">Codigo</th>
+                                <th class="sticky">Envio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr td *ngFor="let listar of ListarPrima; index as i">
+                                <th scope="row">{{i+1}}</th>
+                                <td>
+                                    {{listar.proveedor}}
+                                </td>
+                                <td>
+                                    {{listar.peso}}
+                                </td>
+                                <td>
+                                    {{listar.codigo}}
+                                </td>
+                                <td>
+                                    {{listar.envio}}
+                                </td>
+                                <!--<td *ngFor="let listar of listarMaterialesFinales">
+                                        <a class="btn btn-secondary text-white" (click)="onEdit(product)">
+                                            <i class="far fa-edit"></i>
+                                        </a>-->
+
+                                <!-- <a class="btn btn-danger text-white" (click)="Delect(listar.$key)">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a> -->
+                                <!--</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
