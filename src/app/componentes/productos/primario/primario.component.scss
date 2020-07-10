@@ -36,9 +36,7 @@ a:hover {
     width: 18rem;
 }
 
-.sticky-top {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1020;
+#content {
+    //background-color: #c0c0c0;
+    padding-bottom: 5rem;
 }

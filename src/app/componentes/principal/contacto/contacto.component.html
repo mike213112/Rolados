@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="!isLogged">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item" *ngIf="!isLogged">
-                <a class="nav-link" [routerLink]="['/principal/contact']" routerLinkActive="active"> Contactonos </a>
+                <a class="nav-link" [routerLink]="['/principal/contact']" routerLinkActive="active"> Contact </a>
             </li>
             <li class="nav-item" *ngIf="!isLogged">
-                <a class="nav-link" [routerLink]="['/principal/about']" routerLinkActive="active"> Ayuda </a>
+                <a class="nav-link" [routerLink]="['/principal/about']" routerLinkActive="active"> About </a>
             </li>
         </ul>
         <a class="navbar-brand hidden-md-down"></a>
@@ -24,100 +24,40 @@
     </div>
 </nav>
 
-<div class="container-contact100">
-    <div class="wrap-contact100">
-        <form class="contact100-form validate-form">
-            <span class="contact100-form-title">
-        Mandanos un mensaje
-      </span>
-
-            <label class="label-input100" for="first-name">Ingrese su nombre *</label>
-            <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-                <input id="first-name" class="input100" type="text" name="first-name" placeholder="Nombre">
-                <span class="focus-input100"></span>
+<div class="bg-contact100" style="background-image: url('../../../../assets/imagenes/bg-01.jpg');">
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <div class="login100-pic js-tilt" data-tilt="" style="will-change: transform; transform: perspective(300px) rotateX(0deg) rotateY(0deg);">
+                <img src="../../../../assets/imagenes/contac.png" alt="IMG">
             </div>
-            <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-                <input class="input100" type="text" name="last-name" placeholder="Apellido">
-                <span class="focus-input100"></span>
-            </div>
-
-            <label class="label-input100" for="email">Ingrese su email *</label>
-            <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                <input id="email" class="input100" type="text" name="email" placeholder="Ej. example@email.com">
-                <span class="focus-input100"></span>
-            </div>
-
-            <label class="label-input100" for="phone">Ingrese su nombre</label>
-            <div class="wrap-input100">
-                <input id="phone" class="input100" type="text" name="phone" placeholder="Ej. +502 0000-0000">
-                <span class="focus-input100"></span>
-            </div>
-
-            <label class="label-input100" for="message">Mensaje *</label>
-            <div class="wrap-input100 validate-input" data-validate="Message is required">
-                <textarea id="message" class="input100" name="message" placeholder="Escriba el mensaje"></textarea>
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
-          Enviar mensaje
-        </button>
-            </div>
-        </form>
-
-        <div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
-            <div class="flex-w size1 p-b-47">
-                <div class="txt1 p-r-25">
-                    <span class="lnr lnr-map-marker"></span>
+            <form #quizForm='ngForm' class="contact100-form validate-form" (ngSubmit)="Message(quizForm)">
+                <span class="contact100-form-title font-weight-bold" style="text-align: center;">
+                        Contactanos
+                </span>
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <input id="name" class="input100" type="text" name="name" placeholder="Nombre">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        </span>
                 </div>
-
-                <div class="flex-col size2">
-                    <span class="txt1 p-b-20">
-            Address
-          </span>
-
-                    <span class="txt2">
-            Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
-          </span>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input id="email" class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
                 </div>
-            </div>
-
-            <div class="dis-flex size1 p-b-47">
-                <div class="txt1 p-r-25">
-                    <span class="lnr lnr-phone-handset"></span>
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <textarea id="message" class="input100" name="message" placeholder="Mensaje"></textarea>
+                    <span class="focus-input100"></span>
                 </div>
-
-                <div class="flex-col size2">
-                    <span class="txt1 p-b-20">
-            Lets Talk
-          </span>
-
-                    <span class="txt3">
-            +1 800 1236879
-          </span>
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn" [disabled]='!quizForm.form.valid' type="submit">
+                            Enviar
+                        </button>
                 </div>
-            </div>
-
-            <div class="dis-flex size1 p-b-47">
-                <div class="txt1 p-r-25">
-                    <span class="lnr lnr-envelope"></span>
-                </div>
-
-                <div class="flex-col size2">
-                    <span class="txt1 p-b-20">
-            General Support
-          </span>
-
-                    <span class="txt3">
-            contact@example.com
-          </span>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
-
-
-
-<div id="dropDownSelect1"></div>

@@ -45,7 +45,6 @@ export class FinalInventoryComponent implements OnInit {
   onClickLogout() {
     this.autenticar.Logout();
     this.router.navigate(['/principal']);
-    window.alert('Quieres salir?');
   }
 
 }

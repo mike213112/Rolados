@@ -69,7 +69,7 @@ export class PrimarioComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   onSubmit(myform: NgForm) {
-    const proveedor1 = (<HTMLOptionElement>document.getElementById('provedor')).value;
+    const proveedor1 = (document.getElementById('provedor') as HTMLOptionElement).value;
     const peso = (<HTMLInputElement>document.getElementById('peso')).value;
     const codigo = (<HTMLInputElement>document.getElementById('codigo')).value;
     const envio = (<HTMLInputElement>document.getElementById("envio")).value;
@@ -93,6 +93,7 @@ export class PrimarioComponent implements OnInit {
     }
   }
 
+  // tslint:disable-next-line: typedef
   resetForm(myform?: NgForm) {
     if (myform != null) {
       myform.reset();

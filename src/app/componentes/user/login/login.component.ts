@@ -39,4 +39,10 @@ export class LoginComponent implements OnInit {
         });
     }
   }
+
+  // tslint:disable-next-line: typedef
+  Regresar() {
+    this.router.navigate(['/principal']);
+  }
+
 }

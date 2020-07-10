@@ -1,15 +1,11 @@
-<div class="d-flex">
+<!-- <div class="d-flex">
     <div id="sidebar-container" class="bg-primario">
         <div class="logo">
-            <a class="text-light font-weight-bold" href="/principal">
+            <a class="text-light font-weight-bold" href="/user/principal">
                 <h4 class="font-weight-bold">
                     Diseños y Rolados S.A
                 </h4>
             </a>
-            <!-- <h4 class="text-light font-weight-bold">
-                <a href="/principal"></a>
-                Diseños y Rolados S.A
-            </h4> -->
         </div>
         <div class="menu">
             <a href="/user/new/insert" class="d-block text-light p-3">
@@ -42,6 +38,82 @@
                         <i class="fas fa-user-cog"></i> Cerrar Sesion
                     </button>
                 </ul>
+            </div>
+        </nav>
+    </div>
+</div> -->
+
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="p-4 pt-5">
+            <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(../../../../assets/imagenes/empresa.jpeg);"></a>
+            <ul class="list-unstyled components mb-5">
+                <li>
+                    <a href="#">Principal</a>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Materias</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Prima</a>
+                        </li>
+                        <li>
+                            <a href="#">Intermedia</a>
+                        </li>
+                        <li>
+                            <a href="#">Final</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Bitacora</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Inventarios</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Materia Prima</a>
+                        </li>
+                        <li>
+                            <a href="#">Materia Intermedia</a>
+                        </li>
+                        <li>
+                            <a href="#">Materia Final</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Recibo</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Contenido de la pagina -->
+    <div id="content" class="p-4 p-md-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <!-- <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> <i class="fas fa-user-cog"></i> Cerrar Sesion</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </div>
