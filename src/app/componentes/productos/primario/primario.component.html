@@ -1,4 +1,4 @@
-<div class="d-flex sticky-top flex-md-nowrap p-0 shadow" *ngIf="isLogged">
+<!-- <div class="d-flex sticky-top flex-md-nowrap p-0 shadow" *ngIf="isLogged">
     <div id="sidebar-container" class="bg-primario">
         <div class="logo">
             <a class="text-light font-weight-bold" href="/user/principal">
@@ -40,6 +40,131 @@
                         <i class="fas fa-user-cog"></i> Cerrar Sesion
                     </button>
                 </ul>
+            </div>
+        </nav>
+        <div id="content">
+            <section class="mb-8 mt-5 p4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-lg-6 col-md-4 mx-auto">
+                            <div class="card_login">
+                                <div class="card-header">
+                                    <h1 style="text-align: center;" class="font-weight-bold">Ingreso de Materia Prima</h1>
+                                    <div class="card-body ">
+                                        <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label class="font-weight-bold">Proveedor</label>
+                                                    <select id="provedor" class="form-control" name="proveedor" #proveedor="ngModel" [(ngModel)]="conexion.selectNuevo.proveedor" value="seleccione">
+                                                    <option class="placeholder " value="Seleccione">
+                                                        Seleccione un proveedor
+                                                    </option>
+                                                    <option *ngFor="let provee of ListarProveedores ">
+                                                        {{provee.proveedor}}
+                                                    </option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label class="font-weight-bold">Peso</label>
+                                                    <input id="peso" type="number" class="form-control" name="peso" #peso="ngModel" [(ngModel)]="conexion.selectNuevo.peso" placeholder="">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label class="font-weight-bold">Codigo</label>
+                                                    <input id="codigo" type="number" class="form-control" name="codigo" #codigo="ngModel" [(ngModel)]="conexion.selectNuevo.codigo" placeholder="">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label class="font-weight-bold">Envio</label>
+                                                    <input id="envio" type="text" class="form-control" name="envio" #envio="ngModel" [(ngModel)]="conexion.selectNuevo.envio" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <button class="btn btn-block btn-primary font-weight-bold" type="submit">
+                                                    Ingresar
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div> -->
+
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="p-4 pt-5">
+            <a href="/user/principal" class="img logo rounded-circle mb-5" style="background-image: url(../../../../assets/imagenes/empresa.jpeg);"></a>
+            <ul class="list-unstyled components mb-5">
+                <li>
+                    <a class="font-weight-bold" href="/user/principal">Principal</a>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle font-weight-bold">Materias</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a class="font-weight-bold" href="/user/new/insert">Prima</a>
+                        </li>
+                        <li>
+                            <a class="font-weight-bold" href="/user/new/intermediate">Intermedia</a>
+                        </li>
+                        <li>
+                            <a class="font-weight-bold" href="/user/new/final">Final</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="font-weight-bold" href="#">Bitacora</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle font-weight-bold">Inventarios</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a class="font-weight-bold" href="/user/inventory/raw_inventory">Materia Prima</a>
+                        </li>
+                        <li>
+                            <a class="font-weight-bold" href="/user/inventory/intermediate_inventory">Materia Intermedia</a>
+                        </li>
+                        <li>
+                            <a class="font-weight-bold" href="/user/inventory/final_inventory">Materia Final</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="font-weight-bold" href="#">Recibo</a>
+                </li>
+                <!-- <li>
+                    <a class="font-weight-bold" href="/principal" (click)="onClickLogout()">Cerrar Sesion</a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+    <!-- Contenido de la pagina -->
+    <div id="content" class="p-2">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <!-- <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="btn" (click)="onClickLogout()"> <i class="fas fa-user-cog"></i> Cerrar Sesion</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <div id="content">
